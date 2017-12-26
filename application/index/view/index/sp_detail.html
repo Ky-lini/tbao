@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>详情</title>
+<link rel="stylesheet" type="text/css" href="{$Think.config.web}css/style.css">
+<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_403143_nbpgsnnn79tqpvi.css">
+<link rel="stylesheet" type="text/css" href="{$Think.config.web}css/swiper-3.4.2.min.css">
+<script src="{$Think.config.web}js/jquery-1.12.1.min.js"></script>
+<script src="{$Think.config.web}js/swiper-3.4.2.jquery.min.js"></script>
+<script src="{$Think.config.web}js/jquery.lazyload.min.js"></script>
+</head>
+
+<body>
+<!--nav-->
+<div id="navs">
+	<div id="navs_in">
+        <a href="#" class="tab_nav on">商品</a>
+        <!--<a href="#" class="tab_nav">详情</a>-->
+        <!--<a href="#" class="tab_nav">评价</a>-->
+    </div>
+    <a href="javascript:;" onClick="javascript :history.back(-1);"><span><img src="{$Think.config.web}images/return.png"></span></a>
+</div>
+<!--content-->
+<div class="width100 hidden" id="tabs-container" style="margin-top:44px;margin-bottom:50px;background:#fff;">
+	<div class="swiper-wrapper">
+    	<!--商品-->
+    	<div class="swiper-slide sc_Y">
+        	<!--轮播图-->
+            <div class="swiper-container" id="swiper2">
+            	<div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="{$data.goods_pic}" style="width:100%;height:100%"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <!--正常的内容-->
+            <div class="width100 hidden bj_fff" style="border-top:1px solid #ddd;">
+            	<div class="width96 hidden center">
+            		<h3 class="font16 font100" style="line-height:20px;color:#232326;">{$data.goods_title}</h3>
+                </div>
+                <div class="width96 hidden center" style="margin-top:7px;">
+                    <span>
+                        <b class="fontz12">
+                            <img src="{$Think.config.web}images/icons/quan.png" class="width5 inline-block" />
+                            <font class="font12">￥</font>{$data.coupon_price}
+                        </b>
+                        {if $data.is_ju==1}
+                            <img src="{$Think.config.web}images/icons/ju.png" class="width5 inline-block right" />
+                            <span class="right">&nbsp;</span>
+                        {/if}
+                        {if $data.is_tqg}
+                            <img src="{$Think.config.web}images/icons/tmao.png" class="width5 inline-block right" />
+                            <span class="right">&nbsp;</span>
+                        {/if}
+                        <img src="{$Think.config.web}images/icons/tmao.png" class="width5 inline-block right" />
+                    </span>
+                    <span class="common-icons media-list-icons media-tips-icon media-list-tm-icon" data-txt="天猫"></span>
+                </div>
+                <div class="width96 hidden center inline-block" style="margin-top:7px;">
+                    券后<b class="red font24"><font class="font16">￥</font>{$data.goods_price - $data.coupon_price}</b>
+                    <span class="common-icons media-list-icons media-tips-icon media-list-tm-icon" data-txt="天猫"></span>
+                    <span class="right">&nbsp;</span>
+                </div>
+                <div class="inline-block right" style="margin-top:-33px;margin-right:5px;line-height:20px;height:20px;text-align:center;background-color: #d81e06;border-radius: 5px;width:25%;color:lightgray">
+                    <span class="font13" style="color: white">{$data.goods_sales}</span>
+                    <span class="font13" style="color: lightgray">件已售</span>
+                </div>
+
+                <p class="width96 hidden center block font13" style="color:#81838e;margin-top:10px;">{$data.goods_introduce}</p>
+                <a href="javascript:void(0)" class="width100 block" style="margin-top:10px">
+                    <!--<img src="{$Think.config.web}images/downloadbanner.jpg" class="width100">-->
+                </a>
+            </div>
+        </div>
+        <!--详情-->
+        <div class="swiper-slide sc_Y">
+        	<img src="{$Think.config.web}images/598522feNd9bf72bd.jpg" class="width100">
+        </div>
+        <!--评价-->
+        <div class="swiper-slide sc_Y">
+            <div class="width96 hidden center" id="for_eh">
+            	<!--一条-->
+                <div class="width100 hidden">
+                	<div class="width100 hidden yi_top">
+                    	<img src="{$Think.config.web}images/31333832313438383639325f7031343730363633333338343336_sma.jpg">
+                        <span>c***4</span>
+                        <font>2017-05-06</font>
+                    </div>
+                    <div class="width100 hidden font13 c_33" style="border-bottom:1px solid #ddd;padding-top:8px;padding-bottom:8px;line-height:20px;">对于背投广告的原理来说并没有什么难度，无非打开的窗口失去焦点（blur），而原来页面得到焦点（focus）。但对于流行的浏览器来说，如果非用户行为的弹出窗口（即 onload 时，直接window.open ），会被浏览器默认拦截。</div>
+                </div>
+                <!--一条-->
+                <div class="width100 hidden">
+                	<div class="width100 hidden yi_top">
+                    	<img src="{$Think.config.web}images/31333832313438383639325f7031343730363633333338343336_sma.jpg">
+                        <span>c***4</span>
+                        <font>2017-05-06</font>
+                    </div>
+                    <div class="width100 hidden font13 c_33" style="border-bottom:1px solid #ddd;padding-top:8px;padding-bottom:8px;line-height:20px;">对于背投广告的原理来说并没有什么难度，无非打开的窗口失去焦点（blur），而原来页面得到焦点（focus）。但对于流行的浏览器来说，如果非用户行为的弹出窗口（即 onload 时，直接window.open ），会被浏览器默认拦截。</div>
+                </div>
+                <!--一条-->
+                <div class="width100 hidden">
+                	<div class="width100 hidden yi_top">
+                    	<img src="{$Think.config.web}images/31333832313438383639325f7031343730363633333338343336_sma.jpg">
+                        <span>c***4</span>
+                        <font>2017-05-06</font>
+                    </div>
+                    <div class="width100 hidden font13 c_33" style="border-bottom:1px solid #ddd;padding-top:8px;padding-bottom:8px;line-height:20px;">对于背投广告的原理来说并没有什么难度，无非打开的窗口失去焦点（blur），而原来页面得到焦点（focus）。但对于流行的浏览器来说，如果非用户行为的弹出窗口（即 onload 时，直接window.open ），会被浏览器默认拦截。</div>
+                </div>
+                <!--一条-->
+                <div class="width100 hidden">
+                	<div class="width100 hidden yi_top">
+                    	<img src="{$Think.config.web}images/31333832313438383639325f7031343730363633333338343336_sma.jpg">
+                        <span>c***4</span>
+                        <font>2017-05-06</font>
+                    </div>
+                    <div class="width100 hidden font13 c_33" style="border-bottom:1px solid #ddd;padding-top:8px;padding-bottom:8px;line-height:20px;">对于背投广告的原理来说并没有什么难度，无非打开的窗口失去焦点（blur），而原来页面得到焦点（focus）。但对于流行的浏览器来说，如果非用户行为的弹出窗口（即 onload 时，直接window.open ），会被浏览器默认拦截。</div>
+                </div>
+                <!--一条-->
+                <div class="width100 hidden">
+                	<div class="width100 hidden yi_top">
+                    	<img src="{$Think.config.web}images/31333832313438383639325f7031343730363633333338343336_sma.jpg">
+                        <span>c***4</span>
+                        <font>2017-05-06</font>
+                    </div>
+                    <div class="width100 hidden font13 c_33" style="border-bottom:1px solid #ddd;padding-top:8px;padding-bottom:8px;line-height:20px;">对于背投广告的原理来说并没有什么难度，无非打开的窗口失去焦点（blur），而原来页面得到焦点（focus）。但对于流行的浏览器来说，如果非用户行为的弹出窗口（即 onload 时，直接window.open ），会被浏览器默认拦截。</div>
+                </div>
+                <!--一条-->
+                <div class="width100 hidden">
+                	<div class="width100 hidden yi_top">
+                    	<img src="{$Think.config.web}images/31333832313438383639325f7031343730363633333338343336_sma.jpg">
+                        <span>c***4</span>
+                        <font>2017-05-06</font>
+                    </div>
+                    <div class="width100 hidden font13 c_33" style="border-bottom:1px solid #ddd;padding-top:8px;padding-bottom:8px;line-height:20px;">对于背投广告的原理来说并没有什么难度，无非打开的窗口失去焦点（blur），而原来页面得到焦点（focus）。但对于流行的浏览器来说，如果非用户行为的弹出窗口（即 onload 时，直接window.open ），会被浏览器默认拦截。</div>
+                </div>
+                <!--一条-->
+                <div class="width100 hidden">
+                	<div class="width100 hidden yi_top">
+                    	<img src="{$Think.config.web}images/31333832313438383639325f7031343730363633333338343336_sma.jpg">
+                        <span>c***4</span>
+                        <font>2017-05-06</font>
+                    </div>
+                    <div class="width100 hidden font13 c_33" style="border-bottom:1px solid #ddd;padding-top:8px;padding-bottom:8px;line-height:20px;">对于背投广告的原理来说并没有什么难度，无非打开的窗口失去焦点（blur），而原来页面得到焦点（focus）。但对于流行的浏览器来说，如果非用户行为的弹出窗口（即 onload 时，直接window.open ），会被浏览器默认拦截。</div>
+                </div>
+                <!--一条-->
+                <div class="width100 hidden">
+                	<div class="width100 hidden yi_top">
+                    	<img src="{$Think.config.web}images/31333832313438383639325f7031343730363633333338343336_sma.jpg">
+                        <span>c***4</span>
+                        <font>2017-05-06</font>
+                    </div>
+                    <div class="width100 hidden font13 c_33" style="border-bottom:1px solid #ddd;padding-top:8px;padding-bottom:8px;line-height:20px;">对于背投广告的原理来说并没有什么难度，无非打开的窗口失去焦点（blur），而原来页面得到焦点（focus）。但对于流行的浏览器来说，如果非用户行为的弹出窗口（即 onload 时，直接window.open ），会被浏览器默认拦截。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--bottom-->
+<div id="buy_in">
+    <div class="left" id="gz">
+    	<p style="margin-top:7px;"><i class="iconfont icon-weibiaoti105"></i></p>    
+        <p>关注</p>
+        <script>
+		$("#gz").click(function(){
+			$(this).hasClass("on")?$(this).removeClass("on").html("<p style=\"margin-top:7px;\"><i class=\"iconfont icon-weibiaoti105\"></i></p><p>关注</p>"):$(this).addClass("on").html("<p style=\"margin-top:7px;\"><i class=\"iconfont icon-weibiaoti105\"></i></p><p>已关注</p>")
+			})
+        </script>
+    </div>
+    <div class="left" onClick="add_car()">加入购物车</div>
+    <div class="left" onClick="add_car()">立即购买</div>
+</div>
+<!--遮罩-->
+<div class="width100 hidden" style="position:fixed;top:0;left:0;height:100%;background:rgba(0,0,0,0.5);display:none;z-index:9999" id="zhezhao" >
+	<div class="width100" style="position:fixed;top:0;left:0;height:100%;" onClick="off()"></div>
+	<div class="width100 bj_fff" style="position:absolute;bottom:0;left:0;max-height:400px;">
+    	<div class="width96 center">
+        	<div class="width100" style="margin-top:-40px;height:100px;">
+            	<img src="{$Think.config.web}images/sp5.jpg" style="width:100px;height:100px;border:1px solid #e3e5e9;border-radius:3px;float:left;margin-right:6px;">
+                <div class="red font14" style="padding-top:50px;">￥19.9</div>
+            </div>
+            <div class="width100 hidden">
+            	<div class="width100% hidden size_s" style="margin-top:16px;">
+                	<span>规格:</span>
+                    <a href="javascript:void(0)" class="on">标准版 白色</a>
+                    <a href="javascript:void(0)">快充版 白色</a>
+                    <a href="javascript:void(0)">尼龙 银灰色</a>
+                    <a href="javascript:void(0)">二合一 湖水蓝</a>
+                    <a href="javascript:void(0)">尼龙 玫瑰金</a>
+                    <a href="javascript:void(0)">尼龙 香槟金</a>
+                </div>
+                <div class="width100% hidden size_s" style="margin-top:16px;">
+                	<span>版本:</span>
+                    <a href="javascript:void(0)" class="on">3m</a>
+                    <a href="javascript:void(0)">1.5m</a>
+                    <a href="javascript:void(0)">1m</a>
+                    <a href="javascript:void(0)">1.2m</a>
+                </div>
+                <div class="width100% hidden" style="margin-top:16px;">
+                	<span class="left font14" style="height:27px;line-height:27px;margin-right:6px;">数量:</span>
+                    <div class="left hidden">
+                        <a href="javascript:void(0)" id="min_s">-</a>
+                        <input type="text" value="1" readonly id="t_a">
+                        <a href="javascript:void(0)" id="add_s">+</a>
+                    </div>
+					<script>
+                    var tr=$("#t_a").val();
+                    $("#add_s").click(function(){
+							tr++;
+							$("#t_a").val(tr)
+							
+						})
+					$("#min_s").click(function(){
+						tr--;
+						if(tr<1){
+							$("#t_a").val(1);
+							tr=1
+						}else{
+							$("#t_a").val(tr);
+						}
+							$("#ano").html(tr);
+                    })	
+                    </script>
+                </div>
+            </div>
+            <div class="width100 hidden">
+            	<a hidden="javascript:void(0)" class="left font14 tcenter fff block width50" style="height:43px;line-height:43px;background:#ffb03f;margin-top:16px;" onClick="off()">加入购物车</a>
+                <a href="buy_now.html" class="left font14 tcenter fff block width50" style="height:43px;line-height:43px;background:#f23030;margin-top:16px;" onClick="off()">立即购买</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+window.onload = function(){
+  var ht=document.documentElement.clientHeight-95+'px';
+  $(".sc_Y").css({height:ht})	
+  var mySwiper2 = new Swiper('#swiper2', {
+	autoplay : 1000,
+	pagination:'.swiper-pagination',
+	})	
+  var tabsSwiper = new Swiper('#tabs-container',{
+    speed:500,
+    onSlideChangeStart: function(){
+      $("#navs_in .on").removeClass('on')
+      $("#navs_in a").eq(tabsSwiper.activeIndex).addClass('on')
+	  /*这里可以异步添加数据*/
+	  console.log(tabsSwiper.activeIndex)
+    }
+  })
+  $("#navs_in a").on('touchstart mousedown',function(e){
+    e.preventDefault()
+    $("#navs_in .on").removeClass('on')
+    $(this).addClass('on')
+    tabsSwiper.slideTo( $(this).index() )
+  })
+  $("#navs_in a").click(function(e){
+    e.preventDefault()
+  })
+}
+</script>
+<script>
+function add_car(){
+	$("#zhezhao").css({display:"block"})
+	}
+$(".size_s a").click(function(){
+	$(this).addClass("on").siblings("a").removeClass("on")
+	})
+function off(){
+	$("#zhezhao").css({display:"none"})
+	}		
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>填写订单</title>
+<link rel="stylesheet" type="text/css" href="{$Think.config.web}css/style.css">
+<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_403143_nbpgsnnn79tqpvi.css">
+<link rel="stylesheet" type="text/css" href="{$Think.config.web}css/swiper-3.4.2.min.css">
+<script src="{$Think.config.web}js/jquery-1.12.1.min.js"></script>
+<script src="{$Think.config.web}js/swiper-3.4.2.jquery.min.js"></script>
+<script src="{$Think.config.web}js/jquery.lazyload.min.js"></script>
+</head>
+
+<body>
+<div class="width100 font16 tcenter relative" style="height:44px;background:url(images/bjx.jpg) repeat-x;line-height:44px;">
+	填写订单
+    <a href="javascript:void(0)" id="return"></a>
+</div>
+<div class="width100 hidden bj_fff">
+	<div class="width96 center hidden">
+    	<a href="buy_now.html" class="width100 hidden font16 jiachu block" style="padding:10px 0 10px 0;color:#252525;">
+        	<div class="width100 hidden" style="background:url(images/sm_qianjin.png) no-repeat right;background-size:contain;">
+        		<span class="left" style="margin-right:16px;">奥巴马</span>
+            	<span class="left" style="margin-right:16px;">15554465535</span>
+            </div>
+            <p class="font14 c_99 font100" style="line-height:20px;margin-top:6px;">山东省菏泽市东明县曙光路山东省菏泽市东明县曙光路山东省菏泽市东明县曙光路</p>
+        </a>
+    </div>
+    <div class="width100" style="height:9px;background:url(images/location-border.png) repeat-x;border-bottom:6px solid #f4f4f4;"></div>
+    <div class="width96 center hidden" style="padding-top:10px;padding-bottom:10px">
+    	<div class="width100 hidden">
+        	<img src="{$Think.config.web}images/sp12.jpg" style="height:78px;height:78px;border:1px solid #e3e5e9;border-radius:3px;float:left;margin-right:6px;">
+            <div class="font14 c33">超市双枪（Suncha）筷子 无漆无蜡鸡翅木筷子原木色10双装 XK1501</div>
+            <div class="font13 c33">×<font id="ano">1</font><font class="red right">￥<i id="bno" style="font-style:normal;">29.90</i></font></div>
+            <div class="right hidden" style="margin-top:6px;">
+                <a href="javascript:void(0)" id="min_s">-</a>
+                <input type="text" value="1" readonly id="t_a">
+                <a href="javascript:void(0)" id="add_s">+</a>
+            </div>
+            <script>
+			var tr=$("#t_a").val();
+			$("#add_s").click(function(){
+				tr++;
+				$("#t_a").val(tr)
+				$("#ano").html(tr)
+				$("#bno").html(tr*29.5)
+				$("#cno").html(tr*29.5)
+				})
+			$("#min_s").click(function(){
+				tr--;
+				if(tr<1){
+					$("#t_a").val(1);
+					tr=1
+					}else{
+						$("#t_a").val(tr);
+						}
+				$("#ano").html(tr);
+				$("#bno").html(tr*29.5);
+				$("#cno").html(tr*29.5)
+				})	
+            </script>
+        </div>
+    </div>
+    <div class="width100" style="height:6px;background:#f4f4f4"></div>
+    <div class="width96 hidden center">
+    	<a href="youhuijuan.html" class="width100% hidden font14 c_33 block" style="padding-top:12px;padding-bottom:12px;line-height:20px;">
+        	<font class="left" style="margin-right:6px;">优惠券</font>
+            <span class="bj_red fff block left" style="padding-left:6px;padding-right:6px;">0张可用</span>
+            <img src="{$Think.config.web}images/sm_qianjin.png" class="right" style="margin-left:6px;">
+            <font class="right">未使用</font>
+        </a>
+    </div>
+    <div class="width100" style="height:6px;background:#f4f4f4"></div>
+    <div class="width96 hidden center">
+    	<div class="width100 hidden tcenter red font16" style="margin-top:25px;">总价:￥<font id="cno">29</font></div>
+        <div class="width100 hidden tcenter c33 font13">(运费:￥0)</p>
+        <a href="javascript:void(0)" class="width100 hidden tcenter bj_red fff font16 block" style="height:38px;line-height:38px;margin-top:16px;">立即支付</a>
+    </div>
+</div>
+</body>
+</html>

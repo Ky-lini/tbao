@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>立即购买</title>
+<link rel="stylesheet" type="text/css" href="{$Think.config.web}css/style.css">
+<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_403143_nbpgsnnn79tqpvi.css">
+<link rel="stylesheet" type="text/css" href="{$Think.config.web}css/swiper-3.4.2.min.css">
+<script src="{$Think.config.web}/js/jquery-1.12.1.min.js"></script>
+<script src="{$Think.config.web}/js/swiper-3.4.2.jquery.min.js"></script>
+<script src="{$Think.config.web}/js/jquery.lazyload.min.js"></script>
+</head>
+
+<body>
+<div class="width100 font16 tcenter relative" style="height:44px;background:url(images/bjx.jpg) repeat-x;line-height:44px;">
+	填写订单
+    <a href="javascript:void(0)" id="return"></a>
+</div>
+<div class="width100 hidden bj_fff" style="padding-bottom:12px;">
+	<div class="width96 hidden center">
+    	<div class="width100 hidden add_xx">
+        	<span>收货人:</span>
+            <input class="das" type="text">
+        </div>
+        <div class="width100 hidden add_xx">
+        	<span>手机号码:</span>
+            <input class="das" type="text">
+        </div>
+        <a href="javascript:void(0)" class="width100 hidden add_xx block" id="expressArea">
+            <dl>
+                <dt>选择地区：</dt>
+                <dd>省 > 市 > 区/县</dd>
+            </dl>
+        </a>
+        <!--选择地区弹层-->
+        <section id="areaLayer" class="express-area-box">
+            <header>
+                <h3>选择地区</h3>
+                <a id="backUp" class="back" href="javascript:void(0)" title="返回"></a>
+                <a id="closeArea" class="close" href="javascript:void(0)" title="关闭"></a>
+            </header>
+            <article id="areaBox">
+                <ul id="areaList" class="area-list"></ul>
+            </article>
+        </section>
+        <!--遮罩层-->
+        <div id="areaMask" class="mask"></div>
+        <script src="{$Think.config.web}js/jquery.area.js"></script>
+        <div class="width100 hidden add_xx">
+        	<span>详细地址:</span>
+            <textarea id="adres" maxlength="60" placeholder="请输入"></textarea>
+        </div>
+    </div>
+    <div class="width96 hidden center">
+    	<div class="width100 hidden">
+    		<img src="{$Think.config.web}images/sp5.jpg" width="70" height="70" class="left">
+            <div class="font14 c33">超市双枪（Suncha）筷子 无漆无蜡鸡翅木筷子原木色10双装 XK1501</div>
+            <div class="font13 c33">×1<font class="red right">￥29.90</font></div>
+        </div>
+    </div>
+    <a href="buy_now_next.html" class="width96 tcenter font14 bj_red fff center block" style="height:36px;line-height:36px;">保存信息</a>
+</div>
+</body>
+</html>

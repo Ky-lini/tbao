@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="{$Think.config.web}css/style.css">
+    <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_403143_nbpgsnnn79tqpvi.css">
+    <link rel="stylesheet" type="text/css" href="{$Think.config.web}css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="{$Think.config.web}js/dist-js/dropload.css">
+    <script src="{$Think.config.web}js/jquery-1.12.1.min.js"></script>
+    <script src="{$Think.config.web}js/swiper-3.4.2.jquery.min.js"></script>
+    <script src="{$Think.config.web}js/jquery.lazyload.min.js"></script>
+</head>
+
+<body>
+<!--该盒子一直包括到店长推荐-->
+<script>
+$("body").css({background:"#f4f4f4"})
+</script>
+<div class="width100 hidden bj_fff">
+<!--banner-->
+<div class="width100 hidden swiper-container" id="swiper1" style="max-height:197px;">
+	<div id="box" class="swiper-wrapper">
+        <img src="{$Think.config.web}images/icons/jiadian.jpg" class="swiper-slide">
+        <img src="{$Think.config.web}images/icons/muying.jpeg" class="swiper-slide">
+        <!--<img src="{$Think.config.web}images/icons/nvzhuang.jpg" class="swiper-slide">-->
+        <img src="{$Think.config.web}images/icons/foods.jpg" class="swiper-slide">
+        <img src="{$Think.config.web}images/icons/shoes.jpg" class="swiper-slide">
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+<script>
+$(function(){
+$("#box img").css({opacity:1})
+var mySwiper = new Swiper('#swiper1', {
+	pagination:'.swiper-pagination',
+	autoplay : 1000,
+	})
+})
+</script>
+<!--搜索框-->
+<div class="width100 hidden bj_fff" style="height:40px;">
+	<div class="center width96 border font14 c_66 hidden" style="height:30px;margin-top:5px;border-radius:15px;line-height:28px;text-indent:10px;">
+        <input type="text" class="desc" name="desc" value="" placeholder="请搜索商品"/>
+        <a href="#" onClick="return dw();" class="search">
+            <img src="{$Think.config.web}images/fdj.jpg" width="20" height="20" class="right" style="margin-top:5px;margin-right:10px;">
+        </a>
+    </div>
+</div>
+<script>
+function dw(){
+    var desc = $('.desc').val();
+    $('.search').attr('href',"{:url('index/lists')}?desc="+desc);
+	}
+</script>
+<!--分类-->
+<div class="width100 hidden" style="padding-top:4px;padding-bottom:4px;">
+	<div class="width96 center" id="fenlei">
+    	<a href="javascript:void(0)">
+        	<b><img src="{$Think.config.web}images/fenlei.jpg"></b>
+            <p class="tcenter font12 c_33" style="margin-top:4px">简介</p>
+        </a>
+        <a href="javascript:void(0)">
+        	<b><img src="{$Think.config.web}images/fenlei.jpg"></b>
+            <p class="tcenter font12 c_33" style="margin-top:4px">收藏</p>
+        </a>
+        <a href="javascript:void(0)">
+        	<b><img src="{$Think.config.web}images/fenlei.jpg"></b>
+            <p class="tcenter font12 c_33" style="margin-top:4px">新品</p>
+        </a>
+        <a href="javascript:void(0)">
+        	<b><img src="{$Think.config.web}images/fenlei.jpg"></b>
+            <p class="tcenter font12 c_33" style="margin-top:4px">优惠券</p>
+        </a>
+    </div>
+</div>
+<!--标题-->
+<div class="width100 tcenter c_33 font16" style="margin-top:16px;">店长推荐</div>
+<!--推荐块-->
+<div class="width100 hidden" style="margin-top:12px;padding-bottom:8px;" id="box_show">
+	<!--按照最多3个的进行布局-->
+	<div class="width96 center hidden">
+    	<a href="javascript:void(0)" class="ts">
+        	<img src="{$Think.config.web}images/sp1.jpg">
+        </a>
+        <a href="javascript:void(0)" class="ts">
+        	<img src="{$Think.config.web}images/sp2.jpg">
+        </a>
+        <a href="javascript:void(0)" class="ts">
+        	<img src="{$Think.config.web}images/sp3.jpg">
+        </a>
+    </div>
+    <!--按照最多2个的进行布局-->
+    <!--按照最多1个的进行布局-->
+    <script>
+	var a=$(".ts").length;
+	if(a===0){
+		$("#box_show").css({display:"none"})
+		}else if(a===1){
+			/*一张的时候图片要宽的*/
+			$("head").eq(0).append("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/one.css\">")
+			}else if(a===2){
+				/*二张的时候图片要宽的*/
+				$("head").eq(0).append("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/two.css\">")
+				}else if(a===3){
+					/*三张的时候图片要2个宽的,一个方的*/
+					$("head").eq(0).append("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/three.css\">")
+					}else{
+						alert("最多支持三个")
+						}
+    </script>
+</div>
+</div>
+<!--大盒子结束-->
+<!--标题-->
+<div class="width100 tcenter c_33 font16" style="margin-top:16px;">人气商品</div>
+<div class="width100 hidden" style="margin-top:12px;">
+	<div class="width96 center hidden" style="overflow:scroll;overflow-Y:hidden;">
+    	<div class="hidden" id="hot_sp">
+            {volist name="data" id="v" offset="0" length="6"}
+        	<a href="{:url('index/sp_detail')}?id={$v.goods_id}" class="bj_fff">
+            	<img src="{$v.goods_pic}">
+                <p class="yihang block center font12 c33 width96">{$v.goods_short_title}</p>
+                <p class="yihang block center font12 c33 width96 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">{$v.goods_price}</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">{$v.coupon_price}</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </a>
+            {/volist}
+        </div>
+    </div>
+</div>
+<script>
+var m=$("#hot_sp a").length;
+$("#hot_sp").css({width:m*(188+16)-16+'px'})
+</script>
+<!--标题-->
+<div class="width100 tcenter c_33 font16" style="margin-top:16px;">新品鲜知</div>
+<div class="width100 hidden ren_index" style="margin-top:12px;margin-bottom:60px;">
+	<div class="width96 center hidden" id="new_xz">
+        {volist name="ren_data" id="v" offset="0" length="0"}
+    	<a href="{:url('index/sp_detail')}?id={$v.goods_id}">
+        	<!--<img data-original="{//$v.goods_pic}">-->
+        	<img src="{$v.goods_pic}">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">{$v.goods_short_title}</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">{$v.goods_price}</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="left c_33">
+                    	优惠卷:<font class="red">{$v.coupon_price}</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        {/volist}
+    </div>
+</div>
+<div id="footer">
+	<a href="javascript:void(0)" class="on">
+    	<p><i class="iconfont icon-shouye" style="font-size:27px!important"></i></p>
+        <span>首页</span>
+    </a>
+    <a href="javascript:void(0)">
+    	<p><i class="iconfont icon-leimupinleifenleileibie" style="font-size:27px!important"></i></p>
+        <span>分类</span>
+    </a>
+    <a href="javascript:void(0)">
+    	<p><i class="iconfont icon-gouwuche" style="font-size:27px!important"></i></p>
+        <span>购物车</span>
+    </a>
+    <a href="javascript:void(0)">
+    	<p><i class="iconfont icon-wode" style="font-size:27px!important"></i></p>
+        <span>我的</span>
+    </a>
+</div>
+<!--<script src="{$Think.config.web}js/lazyload.js"></script>-->
+<!--上拉加载-->
+<script src="{$Think.config.web}js/dist-js/dropload.min.js"></script>
+<script>
+    $(function(){
+        var url = "{:url('index/sp_detail')}";
+        // dropload
+        $('.ren_index').dropload({
+            scrollArea : window,
+            loadDownFn : function(me){
+                $.ajax({
+                    type: 'GET',
+                    url: "{:url('index/get_more')}",
+//                    data : {'page':page}
+                    dataType: 'json',
+                    success: function(data){
+                        var result = '';
+                        console.log(data);
+//                        return false;
+                        $.each(data.data,function(i,n){
+                            result += '<a href="'+ url + '?id=' + n.goods_id +'">'
+                                        + '<img src="' + n.goods_pic + '"/>'
+                                        + '<div class="width96 hidden center">'
+                                            + '<p class="yihang block center font12 c33">' + n.goods_short_title + '</p>'
+                                            + '<p class="yihang block center font12 c33 hidden">'
+                                                + '<span class="left c_33">'
+                                                + '商城价:<font class="red">' + n.goods_price + '</font>'
+                                                    + '<font class="font12 red">元</font>'
+                                                + '</span>'
+                                                + '<span class="left c_33">'
+                                                + '优惠卷:<font class="red">'+ n.coupon_price +'</font>'
+                                                    + '<font class="font12 red">元</font>'
+                                                + '</span>'
+                                            + '</p>'
+                                        + '</div>'
+                                    + '</a>';
+//                            console.log(result);
+//                            return false;
+//                        }
+                        })
+//                        me.lock();
+                        // 无数据
+//                        me.noData();
+//                        setTimeout(function(){
+                            $('#new_xz').append(result);
+                            // 每次数据加载完，必须重置
+                            me.resetload();
+//                        },3000);
+                    },
+                    error: function(xhr, type){
+                        alert('Ajax error!');
+                        // 即使加载出错，也得重置
+                        me.resetload();
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>
